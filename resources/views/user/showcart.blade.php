@@ -40,7 +40,13 @@
          <!-- header section strats -->
          @include('user.header')
          <!-- end header section -->
-     
+
+     @if (session()->has('message'))
+     <div class="alert alert-success">
+<button type="button" class="close" data-dismiss="alert"></button>
+        {{ session()->get('message') }}
+     </div>  
+     @endif
 
 <div style="position: relative; top:60px; right:-200px">
 <table>
@@ -68,6 +74,20 @@
 <div>
     <h1 class="total_deg">Total price : ${{ $totalprice }}</h1>
 </div>
+
+<!---Making payments-->
+<div>
+    <h1 style="font-size: 25px; padding-bottom:15px">Proceed to order</h1>
+<a href="{{ url('/cashorder') }}" class="btn btn-danger">Cash on Delivery</a>
+    <a href="" class="btn btn-danger">Card Payment</a>
+
+</div>
+
+
+
+
+
+
       </div>
     </div>
      @include('user.footer')

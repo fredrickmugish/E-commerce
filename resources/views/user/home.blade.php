@@ -52,7 +52,7 @@
      @include('user.footer')
       <!-- footer end -->
       <div class="cpy_">
-         <p>© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a></p>
+         <p>© 2023 All Rights Reserved, By Fredrick Mugisha</p>
       </div>
       <!-- jQery -->
       <script src="user/js/jquery-3.4.1.min.js"></script>
