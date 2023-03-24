@@ -16,19 +16,19 @@
      <div style="position: relative; top:60px; right:-10px">
         <table>
             <tr>
-                <th>Product Title</th>
-                <th>Product Description</th>
-                <th>Product Category</th>
-                <th>Product Quantity</th>
-                <th>Product Price</th>
-                <th>Discount Price</th>
-                <th>Product Image</th>
-                 <th>Action</th>
-                 <th>Action</th>
+                <th style="padding: 10px">Product Title</th>
+                <th style="padding: 10px">Product Description</th>
+                <th style="padding: 10px">Product Category</th>
+                <th style="padding: 10px">Product Quantity</th>
+                <th style="padding: 10px">Product Price</th>
+                <th style="padding: 10px">Discount Price</th>
+                <th style="padding: 10px">Product Image</th>
+                 <th style="padding: 10px">Action</th>
+                 <th style="padding: 10px">Action</th>
             </tr>
 
             @foreach ($product as $product)
-            <tr>
+            <tr align="center">
                 <td>{{ $product->title }}</td>
                 <td>{{ $product->description }}</td>
                 <td>{{ $product->category }}</td>

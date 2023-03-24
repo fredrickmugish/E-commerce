@@ -35,8 +35,13 @@
                     </button>
                  </form>
 
+                 <li class="nav-item">
+                  <a class="nav-link" href="{{ url('/showcart') }}">Cart</a>
+               </li>
+
                 @if (Route::has('login'))
                 @auth
+
                 <x-app-layout>
                 </x-app-layout>
                 

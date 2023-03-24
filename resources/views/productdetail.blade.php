@@ -65,8 +65,20 @@
                   <h6>Product Category  :  {{ $product->category }}</h6>
                   <h6>Product Description  :  {{ $product->description }}</h6>
                   <h6>Quantity Available :  {{ $product->quantity }}</h6>
-                  <a href="" class="btn btn-primary">Add to Cart</a>
-
+                 
+                  <form action="{{ url('/addcart', $product->id) }}" method="post" enctype="multipart/form-data">
+                     @csrf
+                        <div class="row">
+                   <div class="col-md-4">
+                     <input type="number" value="1" min="1" name="quantity">
+                   </div>
+               
+                    <div class="col-md-4">
+                     <input type="submit" value="Add to Cart">
+                    </div>
+                        </div>
+                      </form>
+               
                </div>
             </div>
          </div>
