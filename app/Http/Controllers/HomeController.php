@@ -18,16 +18,9 @@ class HomeController extends Controller
    public function index()
    {
 
-    if(Auth::id())
-    {
-       return redirect('redirects');
-    }
-
-    else
-    {
         $product = product::all();
         return view('homepage', compact('product'));
-    }
+    
     }
 
 
@@ -123,7 +116,7 @@ class HomeController extends Controller
 
     public function cashorder()
     {
-
+        
         //Storing multiple data in the order table
          $user = Auth::user();
          $userid = Auth::user()->id;
@@ -159,4 +152,5 @@ class HomeController extends Controller
          return redirect()->back()->with('message',
           'We have received your order we will connect with you soon');
     }
+
 }

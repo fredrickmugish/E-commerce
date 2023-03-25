@@ -16,22 +16,25 @@
         </a>
       </li>
 
+      
+
       <li class="nav-item menu-items">
-        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+        <a class="nav-link" href="{{ url('/addproducts') }}">
           <span class="menu-icon">
-            <i class="mdi mdi-laptop"></i>
+            <i class="mdi mdi-speedometer"></i>
           </span>
-          <span class="menu-title">Products</span>
-          <i class="menu-arrow"></i>
+          <span class="menu-title">Add products</span>
         </a>
-        <div class="collapse" id="ui-basic">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{ url('/addproducts') }}">Add Products</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{{ url('/showproducts') }}">Show Products</a></li>
-          </ul>
-        </div>
       </li>
 
+      <li class="nav-item menu-items">
+        <a class="nav-link" href="{{ url('/showproducts') }}">
+          <span class="menu-icon">
+            <i class="mdi mdi-speedometer"></i>
+          </span>
+          <span class="menu-title">Show products</span>
+        </a>
+      </li>
 
     </ul>
   </nav>
