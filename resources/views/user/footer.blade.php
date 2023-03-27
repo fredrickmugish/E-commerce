@@ -16,10 +16,14 @@
 
           @if (Route::has('login'))
           @auth
-
+<li>
           <x-app-layout>
           </x-app-layout>
-          
+</li>
+
+   <li class="nav-item">
+    <a class="nav-link" href="{{ url('/showcart') }}">Cart</a>
+ </li>
           @else
 
           <li class="nav-item">

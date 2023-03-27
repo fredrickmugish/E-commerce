@@ -18,8 +18,19 @@ class HomeController extends Controller
    public function index()
    {
 
+    if(Auth::id())
+    {
+ 
+ return redirect('redirects');
+ 
+    }
+    else
+
+
+    {
         $product = product::all();
         return view('homepage', compact('product'));
+    }
     
     }
 

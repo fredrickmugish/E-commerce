@@ -8,6 +8,14 @@
 <html lang="en">
   <head>
    @include('admin.css')
+
+<style>
+   th,td
+   {
+       border: 1px solid grey;
+   }
+</style>
+   
   </head>
   <body>
     <div class="container-scroller">

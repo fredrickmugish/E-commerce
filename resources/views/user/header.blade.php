@@ -41,10 +41,12 @@
 
                 @if (Route::has('login'))
                 @auth
-
+                <li class="nav-item">
                 <x-app-layout>
                 </x-app-layout>
-                
+                </li>
+
+
                 @else
 
                 <li class="nav-item">
