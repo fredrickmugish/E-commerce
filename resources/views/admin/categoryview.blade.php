@@ -11,7 +11,7 @@
 
    <style>
     th,td{
-        border: 1px solid grey;
+        border: 1px solid white;
     }
 </style>
 
@@ -37,7 +37,7 @@
 </form>
 
 <div style="padding: 30px">
-    <table bgcolor="black">
+    <table>
         <tr>
             <th style="padding: 30px">Category Name</th>
             <th style="padding: 30px">Action</th>

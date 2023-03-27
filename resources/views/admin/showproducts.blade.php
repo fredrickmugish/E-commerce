@@ -12,7 +12,7 @@
 <style>
    th,td
    {
-       border: 1px solid grey;
+       border: 1px solid white;
    }
 </style>
    
