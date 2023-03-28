@@ -12,7 +12,7 @@
   <body>
     <div class="container-scroller">
      @include('admin.navbar')
-      
+      @include('admin.dashboard')
      
    
    

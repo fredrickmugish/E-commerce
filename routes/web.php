@@ -17,7 +17,7 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/redirects', [HomeController::class, 'redirects']);
+Route::get('/redirects', [HomeController::class, 'redirects'])->middleware('auth', 'verified');
 
 Route::get('/categoryview', [AdminController::class, 'categoryview']);
 
@@ -52,6 +52,18 @@ Route::get('/stripe/{totalprice}', [HomeController::class, 'stripe']);
 Route::post('stripe/{totalprice}', [HomeController::class, 'stripePost'])->name('stripe.post');
 
 Route::get('/order', [AdminController::class, 'order']);
+
+Route::get('/delivered/{id}', [AdminController::class, 'delivered']);
+
+Route::get('/printpdf/{id}', [AdminController::class, 'printpdf']);
+
+Route::get('/sendemail/{id}', [AdminController::class, 'sendemail']);
+
+Route::post('/send_user_email/{id}', [AdminController::class, 'send_user_email']);
+
+Route::get('/search', [AdminController::class, 'search']);
+
+
 
 Route::middleware([
     'auth:sanctum',

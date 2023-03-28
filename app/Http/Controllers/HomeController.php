@@ -12,6 +12,8 @@ use App\Models\Cart;
 
 use App\Models\Order;
 
+use App\Models\User;
+
 use Stripe;
 
 use Session;
@@ -45,7 +47,22 @@ class HomeController extends Controller
 
         if($usertype == '1')
         {
-           return view('admin.adminhome');
+
+            $total_product = product::all()->count();
+            $total_order = order::all()->count();
+            $total_user = user::all()->count();
+
+            $order = order::all();
+            $total_revenue = 0; 
+
+            foreach($order as $order)
+            {
+                $total_revenue = $total_revenue + $order->price;
+            }
+            $total_delivered = order::where('delivery_status', '=', 'Delivered')->get()->count();
+            $total_processing = order::where('delivery_status', '=', 'processing')->get()->count();
+           return view('admin.adminhome', compact('total_product', 'total_order', 'total_user', 'total_revenue',
+            'total_delivered', 'total_processing'));
 
         }
 
