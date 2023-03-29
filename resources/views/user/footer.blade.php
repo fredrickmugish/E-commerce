@@ -24,6 +24,12 @@
    <li class="nav-item">
     <a class="nav-link" href="{{ url('/showcart') }}">Cart</a>
  </li>
+
+
+ <li class="nav-item">
+   <a class="nav-link" href="{{ url('/showorder') }}">Order</a>
+</li>
+      
           @else
 
           <li class="nav-item">

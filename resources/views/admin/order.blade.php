@@ -21,7 +21,7 @@
      @include('admin.navbar')
      
       
-     <div style="position: relative; top:60px; ">
+     <div style="position: relative; top:10px; ">
         <h1 align="center">All orders</h1>
         <div style="padding-left: 400px; padding-bottom:30px">
             <form action="{{ url('/search') }}" method="get" enctype="multipart/form-data">
@@ -32,7 +32,7 @@
         </div>
         
         <table>
-            <tr>
+            <tr style="background-color:skyblue; color:black">
         <th style="padding: 10px">Name</th>
         <th style="padding: 10px">Email</th>
         <th style="padding: 10px">Phone</th>

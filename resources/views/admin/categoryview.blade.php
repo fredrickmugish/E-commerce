@@ -38,7 +38,7 @@
 
 <div style="padding: 30px">
     <table>
-        <tr>
+        <tr style="background-color: skyblue; color:black">
             <th style="padding: 30px">Category Name</th>
             <th style="padding: 30px">Action</th>
         </tr>

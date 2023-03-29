@@ -23,7 +23,7 @@
       
      <div style="position: relative; top:60px; right:-10px">
         <table>
-            <tr>
+            <tr style="background-color: skyblue; color:black">
                 <th style="padding: 10px">Product Title</th>
                 <th style="padding: 10px">Product Description</th>
                 <th style="padding: 10px">Product Category</th>

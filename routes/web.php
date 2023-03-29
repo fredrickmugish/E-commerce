@@ -63,7 +63,13 @@ Route::post('/send_user_email/{id}', [AdminController::class, 'send_user_email']
 
 Route::get('/search', [AdminController::class, 'search']);
 
+Route::get('/showorder', [HomeController::class, 'showorder']);
 
+Route::get('/cancel_order/{id}', [HomeController::class, 'cancel_order']);
+
+Route::get('/product_search', [HomeController::class, 'product_search']);
+
+Route::get('/products', [HomeController::class, 'products']);
 
 Route::middleware([
     'auth:sanctum',

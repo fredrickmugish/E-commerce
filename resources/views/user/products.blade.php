@@ -4,6 +4,17 @@
           <h2>
              Our <span>products</span>
           </h2>
+
+          <!----search for a product----->
+ <div>
+<form action="{{ url('/product_search') }}" method="get">
+   <input style="width: 500px" type="text" name="search" placeholder="search for a product">
+   <input type="submit" value="search">
+</form>
+ </div>
+
+          <!-----end of search for a product----->
+
        </div>
        <div class="row">
 

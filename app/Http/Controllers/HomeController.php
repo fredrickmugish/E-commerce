@@ -84,15 +84,68 @@ class HomeController extends Controller
     {
         if(Auth::id())
         {
-    //An instance that will be used as a reference to get user data
+    //An instance that will be used as a reference to get data of the logged in user
        $user = Auth::user();
-   //An instance that will be used as a reference to get product data
+       $userid= $user->id;
+   //An instance that will be used as a reference to get product data with respect to product_id
        $product = product::find($id);
 
-   //An instance that will be used to get the user and product data
-   //for it to be included in the cart table, but it will also be used
-   //to pass the quantity details of the product as it is in the 
-   //Add to cart form
+       $product_exist_id=cart::where('product_id', '=', $id)
+       ->where('user_id', '=',$userid)->get('id')->first();
+
+       if($product_exist_id)
+       {
+
+           $cart=cart::find($product_exist_id)->first();
+           $quantity = $cart->quantity;
+           $cart->quantity = $quantity + $request->quantity;
+
+           if($product->discount_price!=null)
+           {
+           $cart->price = $product->discount_price * $cart->quantity;
+           }
+    
+           else
+           {
+            $cart->price = $product->price * $cart->quantity;
+           }
+
+           $cart->save();
+           return redirect()->back();
+
+       }
+       else
+       {
+
+        $cart = new cart;
+        $cart->name = $user->name;
+        $cart->email = $user->email;
+        $cart->phone = $user->phone;
+        $cart->address = $user->address;
+        $cart->user_id = $user->id;
+        
+        $cart->product_title = $product->title;
+        $cart->product_id = $product->id;
+        $cart->image = $product->image;
+     
+        if($product->discount_price!=null)
+        {
+        $cart->price = $product->discount_price * $request->quantity;
+        }
+ 
+        else
+        {
+         $cart->price = $product->price * $request->quantity;
+        }
+        $cart->quantity = $request->quantity;
+ 
+        $cart->save();
+        return redirect()->back();
+         
+
+       }
+
+
        $cart = new cart;
        $cart->name = $user->name;
        $cart->email = $user->email;
@@ -246,8 +299,48 @@ class HomeController extends Controller
 
                 ->with('success', 'Payment successful!');
 
+    }
 
+    public function showorder()
+    {
+        if(Auth::id())
+        {
 
+         $user = Auth::user();
+         $id = $user->id;
+
+         $order = order::where('user_id', '=', $id)->get();
+
+            return view('order', compact('order'));
+        }
+
+        else
+        return redirect('login');
+    }
+
+    public function cancel_order($id)
+
+    {
+       $order = order::find($id);
+       $order->delivery_status='You cancelled the order';
+       $order->save();
+       return redirect()->back();
+    }
+
+    public function product_search(Request $request)
+
+    {
+       $searchText = $request->search;
+       $product = product::where('title', 'LIKE', "%$searchText%")->get();
+
+       return view('homepage', compact('product'));
+
+    }
+    public function products()
+    {
+
+        $product = product::all();
+        return view('user.all_products', compact('product'));
     }
 
 }

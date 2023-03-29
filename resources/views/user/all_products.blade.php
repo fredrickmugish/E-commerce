@@ -30,17 +30,11 @@
          @include('user.header')
          <!-- end header section -->
          <!-- slider section -->
-         @include('user.slider')
+       
          <!-- end slider section -->
-      </div>
+    
       <!-- why section -->
-      @include('user.whyshop')
-      <!-- end why section -->
-      
-      <!-- arrival section -->
-     @include('user.arrival')
-      <!-- end arrival section -->
-      
+     
       <!-- product section -->
      @include('user.products')
       <!-- end product section -->
@@ -90,10 +84,8 @@ padding-bottom:20px; font-size:30px">comments</h1>
       <------comment and reply system ends here------->
 
    
+      <!-- subscribe section -->
      
-      <!-- footer start -->
-     @include('user.footer')
-      <!-- footer end -->
       <div class="cpy_">
          <p>© 2023 All Rights Reserved, By Fredrick Mugisha </p>
       </div>
